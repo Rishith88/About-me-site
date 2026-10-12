@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rishith Manchala| Student & Builder</title>
+  <meta name="description" content="Personal site of Rishith Manchala, a high school student building things for Hack Club Stardance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__logo" href="#top">Rishith.dev</a>
+      <ul class="nav__links">
+        <li><a class="btn btn--small" href="#about">About</a></li>
+        <li><a class="btn btn--small" href="#projects">Projects</a></li>
+        <li><a class="btn btn--small" href="#contact">Contact</a></li>
+        <li><button class="btn btn--small music-btn" id="music-toggle" aria-pressed="false" type="button">Play music</button></li>
+      </ul>
+    </nav>
+
+    <div class="hero__body">
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>Learning Python and CSS and also shipping projects in different hack club porgrams.</p>
+      <h1 class="hero__title">Hi, I am rishith Manchala </h1>
+      <p class="hero__subtitle">High School Student, Builder and Tech Enthusiast</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">See what I made</a>
+        <a class="btn" href="#contact">Say hi</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <h2 class="section__title">About me</h2>
+      <div class="card card--mint about">
+        <p>Hi I am Rishith and I am studying in grade 10 presently in india who is very insterestd in severalkind of stem activites like working with components and sensors and buidling stuff and also doing web developemnt</p>
+        <p>Outside of screens I'm on my school's robotics team, where I mostly solder things and then panic before competitions. I also play way too much Minecraft and I'm slowly working up the courage to contribute to my first open-source project.</p>
+        <p>Presnetly i am learning some advanced langauges like C++ which migth be of good use in future for my journey as it gives me a little opening towards the world of coding and then i am learning python as it gives me access tp high speed machine learning and ai algorithms wehre i can build one myself. </p>
+        <ul class="tags" aria-label="Skills">
+          <li class="tag">HTML</li>
+          <li class="tag">CSS</li>
+          <li class="tag">JavaScript</li>
+          <li class="tag">Git</li>
+          <li class="tag">VS Code</li>
+          <li class="tag">Arduino</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2 class="section__title">Projects</h2>
+      <div class="grid">
+        <article class="card card--pink">
+          <h3 class="card__title">Rishi's Pocket Pomodoro</h3>
+          <p>It is a small pocket pododmoro focus time that runs in the browser itself nd allwos me to focus on my studies allwoing me to do good in highschool</p>
+          <ul class="tags">
+            <li class="tag">HTML</li>
+            <li class="tag">CSS</li>
+            <li class="tag">JavaScript</li>
+          </ul>
+        </article>
+
+        <article class="card card--blue">
+          <h3 class="card__title">Rishith's marvellous botty line follower</h3>
+          <p>SO basically it is a small arduino bot that follows the line the black line that is drawn on the floor.It uses light sensors and a arduino.</p>
+          <ul class="tags">
+            <li class="tag">Arduino</li>
+            <li class="tag">C++</li>
+            <li class="tag">Sensors</li>
+          </ul>
+        </article>
+
+        <article class="card card--orange">
+          <h3 class="card__title">Loot Log</h3>
+          <p>This is one of my first projects.This is basically the rating given to a project out of 5 where i store the data in local storage.</p>
+          <ul class="tags">
+            <li class="tag">JavaScript</li>
+            <li class="tag">CSS</li>
+            <li class="tag">Git</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2 class="section__title">Contact</h2>
+      <div class="card card--lavender contact">
+        <p>Want to contact me live from anywhere you can trhough my github handle </p>
+        <ul class="contact__links">
+          <li><a class="btn" href="https://github.com/Rishith88" target="_blank" rel="noopener">GitHub:Rishith88</a></li>
+          <li><a class="btn" href="mailto:rishithmanchala989@gmail.com">rishtihmanchala989@gmail.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed and coded by Rishith manchala</p>
+    <p> This website is a  website that focuses on my details and my joruney which include my skillset and all teh project i had made until now.</p>
+  </footer>
+
+  
+  <audio id="bg-music" preload="auto" loop>
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+  <p class="audio-error" id="audio-error" hidden>Add an <code>audio.mp3</code> file next to <code>index.html</code> to hear music.</p>
+
+  <script>
+    (function () {
+      var audio = document.getElementById('bg-music');
+      var btn = document.getElementById('music-toggle');
+      var err = document.getElementById('audio-error');
+      if (!audio || !btn) return;
+
+      
+      function showError() {
+        if (err) err.hidden = false;
+        btn.textContent = 'No audio file';
+        btn.disabled = true;
+      }
+
+      // Check when metadata fails to load (usually means missing file).
+      audio.addEventListener('error', showError, true);
+      var sources = audio.querySelectorAll('source');
+      if (sources.length) {
+        var last = sources[sources.length - 1];
+        last.addEventListener('error', showError);
+      }
+
+      btn.addEventListener('click', function () {
+        if (audio.paused) {
+          var p = audio.play();
+          if (p && typeof p.catch === 'function') {
+            p.then(function () {
+              btn.textContent = 'Pause music';
+              btn.setAttribute('aria-pressed', 'true');
+              if (err) err.hidden = true;
+            }).catch(function () {
+              // Autoplay / play blocked or file missing
+              showError();
+            });
+          } else {
+            btn.textContent = 'Pause music';
+            btn.setAttribute('aria-pressed', 'true');
+          }
+        } else {
+          audio.pause();
+          btn.textContent = 'Play music';
+          btn.setAttribute('aria-pressed', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
