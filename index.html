@@ -3,23 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rishith Manchala| Student & Builder</title>
+  <title>Rishith Manchala | Student & Builder</title>
   <meta name="description" content="Personal site of Rishith Manchala, a high school student building things for Hack Club Stardance.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #111111;
+      --card-mint: #e6f9f3;
+      --card-pink: #fff0f5;
+      --card-blue: #e6f2ff;
+      --card-orange: #fff5e6;
+      --card-lavender: #f3f0ff;
+    }
+
+    :has(.theme-toggle-input:checked) {
+      --bg-color: #121212;
+      --text-color: #f5f5f5;
+      --card-mint: #1a2e26;
+      --card-pink: #341a22;
+      --card-blue: #162435;
+      --card-orange: #352516;
+      --card-lavender: #221a35;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    .theme-toggle-input {
+      display: none;
+    }
+
+    .theme-toggle-label {
+      cursor: pointer;
+      padding: 8px 16px;
+      background: #ff5252;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .theme-toggle-input:checked + .theme-toggle-label .light-text {
+      display: none;
+    }
+
+    .theme-toggle-input:not(:checked) + .theme-toggle-label .dark-text {
+      display: none;
+    }
+
+    .card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .card--mint { background-color: var(--card-mint); }
+    .card--pink { background-color: var(--card-pink); }
+    .card--blue { background-color: var(--card-blue); }
+    .card--orange { background-color: var(--card-orange); }
+    .card--lavender { background-color: var(--card-lavender); }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff5252;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
-  <body>
 
-  <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
-  <label for="theme-toggle" class="theme-toggle-label">
-    <span class="light-text">Switch to Dark Mode</span>
-    <span class="dark-text">Switch to Light Mode</span>
-  </label>
-
-  <header class="hero" id="top">
+  <div style="padding: 15px; text-align: right;">
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+    <label for="theme-toggle" class="theme-toggle-label">
+      <span class="light-text">Switch to Dark Mode</span>
+      <span class="dark-text">Switch to Light Mode</span>
+    </label>
+  </div>
 
   <header class="hero" id="top">
     <nav class="nav" aria-label="Main navigation">
@@ -33,8 +116,8 @@
     </nav>
 
     <div class="hero__body">
-      <p class="status"><span class="status__dot" aria-hidden="true"></span>Learning Python and CSS and also shipping projects in different hack club porgrams.</p>
-      <h1 class="hero__title">Hi, I am rishith Manchala </h1>
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>Learning Python and CSS and also shipping projects in different hack club programs.</p>
+      <h1 class="hero__title">Hi, I am Rishith Manchala</h1>
       <p class="hero__subtitle">High School Student, Builder and Tech Enthusiast</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#projects">See what I made</a>
@@ -101,8 +184,8 @@
       <div class="card card--lavender contact">
         <p>Want to contact me live from anywhere you can trhough my github handle </p>
         <ul class="contact__links">
-          <li><a class="btn" href="https://github.com/Rishith88" target="_blank" rel="noopener">GitHub:Rishith88</a></li>
-          <li><a class="btn" href="mailto:rishithmanchala989@gmail.com">rishtihmanchala989@gmail.com</a></li>
+          <li><a class="btn" href="https://github.com" target="_blank" rel="noopener">GitHub:Rishith88</a></li>
+          <li><a class="btn" href="mailto:rishithmanchala989@gmail.com">rishithmanchala989@gmail.com</a></li>
         </ul>
       </div>
     </section>
@@ -110,10 +193,11 @@
 
   <footer class="footer">
     <p>Designed and coded by Rishith manchala</p>
-    <p> This website is a  website that focuses on my details and my joruney which include my skillset and all teh project i had made until now.</p>
+    <p>This website is a website that focuses on my details and my joruney which include my skillset and all teh project i had made until now.</p>
   </footer>
 
-  
+  <a href="#top" class="back-to-top" aria-label="Scroll to top">↑</a>
+
   <audio id="bg-music" preload="auto" loop>
     <source src="audio.mp3" type="audio/mpeg">
   </audio>
@@ -126,14 +210,12 @@
       var err = document.getElementById('audio-error');
       if (!audio || !btn) return;
 
-      
       function showError() {
         if (err) err.hidden = false;
         btn.textContent = 'No audio file';
         btn.disabled = true;
       }
 
-      // Check when metadata fails to load (usually means missing file).
       audio.addEventListener('error', showError, true);
       var sources = audio.querySelectorAll('source');
       if (sources.length) {
@@ -150,7 +232,6 @@
               btn.setAttribute('aria-pressed', 'true');
               if (err) err.hidden = true;
             }).catch(function () {
-              // Autoplay / play blocked or file missing
               showError();
             });
           } else {
@@ -163,6 +244,17 @@
           btn.setAttribute('aria-pressed', 'false');
         }
       });
+
+      var hour = new Date().getHours();
+      var greeting = "Hi";
+      if (hour < 12) greeting = "Good morning";
+      else if (hour < 18) greeting = "Good afternoon";
+      else greeting = "Good evening";
+      
+      var titleElement = document.querySelector('.hero__title');
+      if (titleElement) {
+        titleElement.innerHTML = greeting + ", I am Rishith Manchala";
+      }
     })();
   </script>
 </body>
