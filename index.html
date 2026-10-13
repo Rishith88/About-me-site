@@ -8,6 +8,10 @@
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+  
+  <!-- THIS RESTORES YOUR ORIGINAL CSS LAYOUT AND BUTTON STYLES -->
+  <link rel="stylesheet" href="style.css">
+
   <style>
     :root {
       --bg-color: #ffffff;
@@ -33,9 +37,6 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.3s ease, color 0.3s ease;
-      font-family: 'Space Mono', monospace;
-      margin: 0;
-      padding: 0;
     }
 
     .theme-toggle-input {
@@ -69,11 +70,11 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
-    .card--mint { background-color: var(--card-mint); }
-    .card--pink { background-color: var(--card-pink); }
-    .card--blue { background-color: var(--card-blue); }
-    .card--orange { background-color: var(--card-orange); }
-    .card--lavender { background-color: var(--card-lavender); }
+    .card--mint { background-color: var(--card-mint) !important; }
+    .card--pink { background-color: var(--card-pink) !important; }
+    .card--blue { background-color: var(--card-blue) !important; }
+    .card--orange { background-color: var(--card-orange) !important; }
+    .card--lavender { background-color: var(--card-lavender) !important; }
 
     .back-to-top {
       position: fixed;
